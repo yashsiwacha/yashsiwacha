@@ -1,134 +1,99 @@
 <div align="center">
-  <!-- TODO: Replace with the generated banner -->
-  <img src="./assets/banner.png" alt="Yash Siwach" width="100%" />
+  <img src="./assets/banner.png" alt="Yash Siwach - Backend & Distributed Systems Engineer" width="100%" />
 
   # Yash Siwach
   
-  **Backend Engineer • Java • Spring Boot • Kafka • PostgreSQL**
+  **Backend & Distributed Systems Engineer**
   <br>
-  Building reliable backend systems and contributing to Open Source.
-  
-  <p>
-    <a href="https://linkedin.com/in/yashsiwacha">LinkedIn</a> • 
-    <a href="mailto:yashsiwach07@gmail.com">Email</a> • 
-    <a href="https://yashsiwacha.github.io/Portfolio/">Portfolio</a>
-  </p>
+  Java 17/21 • Spring Boot 3 • Apache Kafka • Redis • PostgreSQL • Observability
+  <br><br>
+
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Yash_Siwach-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/yashsiwacha)
+  [![Email](https://img.shields.io/badge/Email-yashsiwach07@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:yashsiwach07@gmail.com)
+  [![Portfolio](https://img.shields.io/badge/Portfolio-yashsiwacha.github.io-10B981?style=for-the-badge&logo=vercel&logoColor=white)](https://yashsiwacha.github.io/Portfolio/)
 </div>
 
 ---
 
-## About Me
+## ⚡ Executive Summary
 
-I'm a Backend Engineer focused on Java, Spring Boot, PostgreSQL, Redis and Kafka. 
+I am a **Backend Engineer** specializing in high-concurrency JVM microservices, event-driven architectures, and distributed systems. 
 
-I enjoy designing reliable distributed systems, building robust backend architectures, and contributing to open source projects like Resilience4j and Micrometer. My work emphasizes system reliability and observability to ensure services run smoothly in production.
-
----
-
-## Recent Work
-
-- **Micrometer**: Contributed a lock-free concurrency fix (currently under review).
-- **Resilience4j**: Contributed a Spring 6 executor configuration fix (currently under review).
-- **Notification System**: Built a reliable event-driven delivery system handling ~500 events/sec.
+My work centers on designing reliable systems that guarantee strict data consistency under heavy concurrent traffic. I actively contribute upstream fixes to core JVM ecosystem frameworks—such as **Micrometer** and **Resilience4j**—and engineer event-driven pipelines utilizing **Kafka**, **Redis Lua distributed claim-checks**, and **JPA optimistic/pessimistic concurrency controls**.
 
 ---
 
-## Current Focus
+## 🌟 Upstream Open Source Contributions
 
-**Currently Exploring**
-- Distributed Systems
-- JVM Internals
-- Spring Ecosystem
-- Observability
-- Open Source
+| Framework | Target Repository | Engineering Impact & Fix | Status |
+| :--- | :--- | :--- | :--- |
+| **Micrometer** | `micrometer-metrics/micrometer` | **Lock-Free Concurrency Fix**: Contributed a thread-safe update mechanism in `StepFunctionCounter` & `StepFunctionTimer` to prevent concurrent over-counting under heavy thread contention (`commit 6fa8bdc17`). Added deterministic multi-threaded unit tests. | [Under Review / Active PR](https://github.com/micrometer-metrics/micrometer) |
+| **Resilience4j** | `resilience4j/resilience4j` | **Spring 6 Executor Aspect Thread Mode**: Fixed custom thread executor mode resolution (virtual threads vs. platform threads) across `RetryAspect` and `TimeLimiterAspect` in Spring Boot 3 / Spring 6 (`commit 4a3bd58`). Added deterministic aspect tests. | [Under Review / Active PR](https://github.com/resilience4j/resilience4j) |
 
 ---
 
-## Experience
+## 🚀 Featured Engineering Projects
 
-**EPAM Systems**
-*Junior Software Engineer Intern*
-Focused on production backend systems engineering, improving concurrent request processing, and increasing system reliability through structured debugging and performance tuning.
+### 1. [Distributed Real-Time Notification Platform](https://github.com/yashsiwacha/Real-Time-Notification-System)
+> *Production-grade event-driven notification infrastructure built with Spring Boot 3, Kafka, Redis, and WebSockets.*
+
+- **Distributed Idempotency**: Engineered atomic `claim-check` mechanics via Redis Lua scripts (`claim.lua` / `complete.lua`), preventing race conditions on duplicate Kafka offsets during consumer rebalances.
+- **Optimistic Concurrency**: Implemented JPA `@Version` optimistic locking to guarantee atomic database updates during simultaneous retry storms; benchmarked **1,000 concurrent update requests** with **0 race conditions**.
+- **Performance & Latency**: Sustained **500+ events/sec** with sub-200ms p95 end-to-end delivery latency and **<25ms STOMP WebSocket dispatch latency**.
+- **Observability**: Instrumenting cross-boundary correlation IDs (`X-Request-ID`) in MDC structured logs, custom Micrometer counters, and custom Grafana dashboard telemetry.
+- **Stack**: Java 17, Spring Boot 3, Apache Kafka, Redis, PostgreSQL, STOMP WebSockets, Docker Compose, Render.
+
+### 2. [High-Concurrency Auction Platform](https://github.com/yashsiwacha/Auction-System)
+> *ACID-compliant concurrent bidding engine designed for zero data inconsistency under high bid volume.*
+
+- **Concurrency Control**: Combined Java critical synchronization with pessimistic database locking (`SELECT FOR UPDATE`), eliminating race conditions in concurrent bid execution.
+- **Stress-Tested Reliability**: Validated correctness under a **50-thread JMeter load profile (1,000+ bid events)** with zero double-allocation or state corruption.
+- **Database Optimization**: Sub-50ms query execution achieved by eliminating N+1 query patterns via joined fetch strategies and composite indexing.
+- **Stack**: Java 11/17, Spring Boot, Spring Security (JWT), MySQL/PostgreSQL, Thymeleaf, JMeter, Render.
+
+### 3. [ProjectEcho — Career Intelligence Engine](https://github.com/yashsiwacha/project-echo)
+> *Modular monolith architecture executing formal enterprise architecture standards (FGM, CIF, EAF).*
+
+- **Architecture**: Domain-driven modular monolith enforcing clean boundary isolation across career evidence verification, metrics ingestion, and governance engines.
+- **Stack**: Java 17, Spring Boot 3, Maven, Domain-Driven Design (DDD).
 
 ---
 
-## Engineering Principles
+## 💼 Work Experience
 
-1. **Design for failure**: Expect network partitions, timeouts, and hardware failures.
-2. **Build observable systems**: If it's in production, it must emit metrics, logs, and traces.
-3. **Measure before optimizing**: Rely on metrics and profiles, not intuition.
-4. **Prefer simplicity over cleverness**: Code is read vastly more often than it is written.
-5. **Write tests that reproduce bugs**: Prevent regressions through deterministic testing.
+**EPAM Systems** — *Junior Software Engineer Intern* `[Jan 2026 – Apr 2026]`
+- **Database Optimization**: Reduced average query execution time by **40%** on high-traffic payment ledger tables via composite indexing and SQL query rewriting (`EXPLAIN ANALYZE`).
+- **Idempotency & Reliability**: Implemented transaction idempotency validation with `@Transactional` rollback semantics, preventing double-submission payment errors during network retries.
+- **API Extension**: Developed cursor-based pagination and `@Valid` request validation across REST endpoints with 30+ JUnit/Mockito tests integrated into GitHub Actions CI/CD.
 
 ---
 
-## Tech Stack
+## 🛠️ Technical Stack
 
 | Category | Technologies |
 | :--- | :--- |
-| **Languages** | Java (17/21), C++, SQL |
-| **Backend & Frameworks** | Spring Boot, Spring WebFlux, Hibernate, REST APIs |
-| **Distributed Systems** | Apache Kafka |
-| **Databases & Caching** | PostgreSQL, MySQL, Redis |
-| **Infrastructure** | Docker, CI/CD (GitHub Actions) |
+| **Languages** | Java (17/21), SQL, C++, Python |
+| **Backend Frameworks** | Spring Boot 3, Spring WebFlux, Spring Data JPA / Hibernate, REST APIs |
+| **Distributed Systems** | Apache Kafka, Event-Driven Architecture, Redis Distributed Caching, Lua Scripts |
+| **Databases** | PostgreSQL, MySQL, Redis, Query Optimization (`EXPLAIN ANALYZE`) |
+| **Concurrency & Control** | Multithreading, CompletableFuture, Lock-Free Concurrency, Optimistic & Pessimistic Locking |
+| **Observability & Testing**| Micrometer, Prometheus, Grafana, MDC Tracing, JUnit 5, Mockito, JMeter |
+| **DevOps & Infrastructure**| Docker, Docker Compose, GitHub Actions CI/CD, AWS (EC2/S3), Render |
 
 ---
 
-## Open Source
+## 📐 Engineering Principles
 
-**[Resilience4j](https://github.com/resilience4j/resilience4j)**
-- Contributed a Spring 6 executor configuration fix.
-- Added deterministic regression tests.
-- *PR currently under review.*
-
-**[Micrometer](https://github.com/micrometer-metrics/micrometer)**
-- Contributed a lock-free concurrency fix.
-- Added deterministic multithreaded regression tests.
-- *PR currently under review.*
+1. **Design for Failure**: Assume network partitions, consumer rebalances, and DB timeouts will occur. Build exponential backoff and Dead Letter Queues (DLQ).
+2. **Atomic Idempotency**: Side-effects in distributed workers must be guarded by atomic claim-check locks before execution.
+3. **Empirical Measurement**: Benchmark latency and throughput using JMeter stress profiles and flame graphs before drawing conclusions.
+4. **Observable Production Systems**: If a microservice is deployed, it must emit correlated logs (`X-Request-ID`), structured metrics, and health checks.
 
 ---
 
-## Featured Projects
-
-### [Distributed Notification System](https://github.com/yashsiwacha/Real-Time-Notification-System)
-*Asynchronous, event-driven producer-consumer architecture.*
-- **Impact**: Achieved reliable delivery for ~500 events/sec with sub-200ms p95 latency.
-- **Engineering**: Designed resilient delivery using Dead Letter Queues (DLQ) and exponential backoff retries.
-- **Technologies**: Java, Spring Boot, Kafka, Redis
-
-### [Concurrent Auction System](https://github.com/yashsiwacha/Auction-System)
-*ACID-compliant bidding engine designed for high concurrency.*
-- **Impact**: Supported 50+ simultaneous concurrent bids per entity with zero data inconsistency.
-- **Engineering**: Prevented race conditions using precise database-level locking and application-level synchronization.
-- **Technologies**: Java, Spring Boot, MySQL
-
-### [Distributed Cache Server](https://github.com/yashsiwacha/distributed-cache-server)
-*Custom highly concurrent, low-latency key-value store.*
-- **Impact**: Handled multi-client concurrent requests efficiently without blocking read threads.
-- **Engineering**: Developed a custom TCP socket server with TTL expiration, LRU eviction, and asynchronous persistence.
-- **Technologies**: C++, STL, POSIX Threads, Mutexes
-
-### [Low Latency Order Management System](https://github.com/yashsiwacha/low-latency-order-management)
-*Thread-safe concurrent order book for near-instantaneous execution.*
-- **Impact**: Minimized lock contention and optimized memory management to ensure real-time trade execution.
-- **Engineering**: Utilized efficient price-time priority matching logic under heavy load.
-- **Technologies**: C++, STL, Concurrency
-
----
-
-## Currently Learning
-
-- JVM Internals
-- Java Concurrency
-- Spring Source Code
-- Distributed Systems
-- Observability
-
----
-
-## GitHub Stats
+## 📊 GitHub Analytics
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=yashsiwacha&show_icons=true&theme=transparent&hide_border=true&title_color=ffffff&icon_color=ffffff&text_color=a0a0a0" height="150" alt="GitHub Stats" />
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=yashsiwacha&theme=transparent&hide_border=true&color=ffffff&line=58A6FF&point=ffffff&hide_title=true" height="250" alt="Contribution Graph" />
+  <img src="https://github-readme-stats.vercel.app/api?username=yashsiwacha&show_icons=true&theme=transparent&hide_border=true&title_color=ffffff&icon_color=10B981&text_color=9CA3AF" height="160" alt="GitHub Stats" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=yashsiwacha&theme=transparent&hide_border=true&color=ffffff&line=10B981&point=ffffff&hide_title=true" height="240" alt="Contribution Graph" />
 </div>
