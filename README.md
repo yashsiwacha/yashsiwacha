@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/banner.png?v=3" alt="Yash Siwach - Backend & Distributed Systems Engineer" width="100%" />
+  <img src="./assets/banner.png?v=4" alt="Yash Siwach - Backend & Distributed Systems Engineer" width="100%" style="aspect-ratio: 1584 / 396; width: 100%; height: auto; display: block; border-radius: 8px;" />
 
   <br>
 
