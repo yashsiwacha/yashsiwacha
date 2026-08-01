@@ -1,6 +1,6 @@
 **Banner Prompt for Midjourney / DALL-E / Designer:**
 
-"A sleek, minimal, dark-themed background suitable for a developer profile banner. The image should feature very subtle geometric lines or a dark mesh gradient in deep grays and near-blacks. It should have a professional engineering aesthetic, similar to the branding of Stripe, Linear, or JetBrains. No anime, no cyberpunk elements, no glowing neon code blocks. Purely elegant, minimalist, typography-focused dark mode design."
+"Design a minimal, dark-themed background banner for a professional Backend Engineer. The aesthetic should draw strong inspiration from the clean, typography-first branding of Stripe, Vercel, Linear, and JetBrains. Use deep grays or near-black tones. The design must be extremely professional and elegant—absolutely no random graphics, no cyberpunk elements, no glowing neon code, and no anime. Focus on subtle, dark gradients or clean geometric lines that support a strong typographic layout."
 
 **Instructions:**
 1. Generate the image (1200x400 resolution or 3:1 aspect ratio).
