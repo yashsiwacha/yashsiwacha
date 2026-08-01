@@ -94,6 +94,7 @@ My work centers on designing reliable systems that guarantee strict data consist
 ## 📊 GitHub Analytics
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=yashsiwacha&show_icons=true&theme=transparent&hide_border=true&title_color=ffffff&icon_color=10B981&text_color=9CA3AF" height="160" alt="GitHub Stats" />
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=yashsiwacha&theme=transparent&hide_border=true&color=ffffff&line=10B981&point=ffffff&hide_title=true" height="240" alt="Contribution Graph" />
+  <img src="https://streak-stats.demolab.com/?user=yashsiwacha&theme=dark&background=0d1117&ring=10b981&fire=10b981&currStreakNum=ffffff&sideNums=9ca3af&sideLabels=9ca3af&border=30363d" alt="GitHub Streak Stats" height="175" />
+  <br><br>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=yashsiwacha&theme=react-dark&bg_color=0d1117&color=10b981&line=10b981&point=ffffff&hide_border=true" alt="Contribution Graph" width="100%" />
 </div>
