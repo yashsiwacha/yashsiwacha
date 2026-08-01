@@ -14,16 +14,7 @@
 
 I am a **Backend Engineer** specializing in high-concurrency JVM microservices, event-driven architectures, and distributed systems. 
 
-My work centers on designing reliable systems that guarantee strict data consistency under heavy concurrent traffic. I actively contribute upstream fixes to core JVM ecosystem frameworks—such as **Micrometer** and **Resilience4j**—and engineer event-driven pipelines utilizing **Kafka**, **Redis Lua distributed claim-checks**, and **JPA optimistic/pessimistic concurrency controls**.
-
----
-
-## 🌟 Upstream Open Source Contributions
-
-| Framework | Target Repository | Engineering Impact & Fix | Status |
-| :--- | :--- | :--- | :--- |
-| **Micrometer** | `micrometer-metrics/micrometer` | **Lock-Free Concurrency Fix**: Contributed a thread-safe update mechanism in `StepFunctionCounter` & `StepFunctionTimer` to prevent concurrent over-counting under heavy thread contention (`commit 6fa8bdc17`). Added deterministic multi-threaded unit tests. | [Under Review / Active PR](https://github.com/micrometer-metrics/micrometer) |
-| **Resilience4j** | `resilience4j/resilience4j` | **Spring 6 Executor Aspect Thread Mode**: Fixed custom thread executor mode resolution (virtual threads vs. platform threads) across `RetryAspect` and `TimeLimiterAspect` in Spring Boot 3 / Spring 6 (`commit 4a3bd58`). Added deterministic aspect tests. | [Under Review / Active PR](https://github.com/resilience4j/resilience4j) |
+My work centers on designing reliable systems that guarantee strict data consistency under heavy concurrent traffic. I actively engineer event-driven pipelines utilizing **Kafka**, **Redis Lua distributed claim-checks**, and **JPA optimistic/pessimistic concurrency controls**, alongside upstream contributions to core JVM frameworks like **Micrometer** and **Resilience4j**.
 
 ---
 
@@ -33,18 +24,18 @@ My work centers on designing reliable systems that guarantee strict data consist
 > *Production-grade event-driven notification infrastructure built with Spring Boot 3, Kafka, Redis, and WebSockets.*
 
 - **Distributed Idempotency**: Engineered atomic `claim-check` mechanics via Redis Lua scripts (`claim.lua` / `complete.lua`), preventing race conditions on duplicate Kafka offsets during consumer rebalances.
-- **Optimistic Concurrency**: Implemented JPA `@Version` optimistic locking to guarantee atomic database updates during simultaneous retry storms; benchmarked **1,000 concurrent update requests** with **0 race conditions**.
+- **Optimistic Concurrency**: Implemented JPA `@Version` optimistic locking to guarantee atomic database updates during simultaneous retry storms; benchmarked **1,000 concurrent update requests** demonstrating DB contention limits.
 - **Performance & Latency**: Sustained **500+ events/sec** with sub-200ms p95 end-to-end delivery latency and **<25ms STOMP WebSocket dispatch latency**.
-- **Observability**: Instrumenting cross-boundary correlation IDs (`X-Request-ID`) in MDC structured logs, custom Micrometer counters, and custom Grafana dashboard telemetry.
+- **Observability & Deployment**: Instrumenting cross-boundary correlation IDs (`X-Request-ID`) in MDC structured logs, custom Micrometer counters, and automated deployment via GitHub Actions CI pipeline.
 - **Stack**: Java 17, Spring Boot 3, Apache Kafka, Redis, PostgreSQL, STOMP WebSockets, Docker Compose, Render.
 
 ### 2. [High-Concurrency Auction Platform](https://github.com/yashsiwacha/Auction-System)
 > *ACID-compliant concurrent bidding engine designed for zero data inconsistency under high bid volume.*
 
-- **Concurrency Control**: Combined Java critical synchronization with pessimistic database locking (`SELECT FOR UPDATE`), eliminating race conditions in concurrent bid execution.
-- **Stress-Tested Reliability**: Validated correctness under a **50-thread JMeter load profile (1,000+ bid events)** with zero double-allocation or state corruption.
+- **Concurrency Control**: Combined Java critical synchronization with pessimistic database locking (`SELECT FOR UPDATE`), validating transactional consistency under a **1,000+ concurrent bid event stress profile**.
 - **Database Optimization**: Sub-50ms query execution achieved by eliminating N+1 query patterns via joined fetch strategies and composite indexing.
-- **Stack**: Java 11/17, Spring Boot, Spring Security (JWT), MySQL/PostgreSQL, Thymeleaf, JMeter, Render.
+- **Security & Authorization**: Secured REST endpoints with Spring Security and stateless JWT authentication; enforced role-based access control (RBAC) at the method level.
+- **Stack**: Java 11/17, Spring Boot, Spring Security (JWT), MySQL/PostgreSQL, Thymeleaf, k6, Render.
 
 ### 3. [ProjectEcho — Career Intelligence Engine](https://github.com/yashsiwacha/project-echo)
 > *Modular monolith architecture executing formal enterprise architecture standards (FGM, CIF, EAF).*
@@ -57,9 +48,18 @@ My work centers on designing reliable systems that guarantee strict data consist
 ## 💼 Work Experience
 
 **EPAM Systems** — *Junior Software Engineer Intern* `[Jan 2026 – Apr 2026]`
-- **Database Optimization**: Reduced average query execution time by **40%** on high-traffic payment ledger tables via composite indexing and SQL query rewriting (`EXPLAIN ANALYZE`).
 - **Idempotency & Reliability**: Implemented transaction idempotency validation with `@Transactional` rollback semantics, preventing double-submission payment errors during network retries.
-- **API Extension**: Developed cursor-based pagination and `@Valid` request validation across REST endpoints with 30+ JUnit/Mockito tests integrated into GitHub Actions CI/CD.
+- **Database Optimization**: Reduced average query execution time by **40%** on high-traffic payment ledger tables via composite indexing and SQL query rewriting (`EXPLAIN ANALYZE`).
+- **API Extension**: Extended transaction-history REST APIs with cursor-based pagination and `@Valid` request validation across REST endpoints with 30+ JUnit/Mockito tests integrated into GitHub Actions CI/CD.
+
+---
+
+## 🌟 Upstream Open Source Contributions
+
+| Framework | Target Repository | Engineering Impact & Fix | Status |
+| :--- | :--- | :--- | :--- |
+| **Micrometer** | `micrometer-metrics/micrometer` | **Lock-Free Concurrency Fix**: Contributed a thread-safe update mechanism in `StepFunctionCounter` & `StepFunctionTimer` to prevent concurrent over-counting under heavy thread contention (`commit 6fa8bdc17`). Added deterministic multi-threaded unit tests. | Open Source Contribution |
+| **Resilience4j** | `resilience4j/resilience4j` | **Spring 6 Executor Aspect Thread Mode**: Fixed custom thread executor mode resolution (virtual threads vs. platform threads) across `RetryAspect` and `TimeLimiterAspect` in Spring Boot 3 / Spring 6 (`commit 4a3bd58`). Added deterministic aspect tests. | Open Source Contribution |
 
 ---
 
@@ -69,11 +69,11 @@ My work centers on designing reliable systems that guarantee strict data consist
 | :--- | :--- |
 | **Languages** | Java (17/21), SQL, C++, Python |
 | **Backend Frameworks** | Spring Boot 3, Spring WebFlux, Spring Data JPA / Hibernate, REST APIs |
-| **Distributed Systems** | Apache Kafka, Event-Driven Architecture, Redis Distributed Caching, Lua Scripts |
-| **Databases** | PostgreSQL, MySQL, Redis, Query Optimization (`EXPLAIN ANALYZE`) |
-| **Concurrency & Control** | Multithreading, CompletableFuture, Lock-Free Concurrency, Optimistic & Pessimistic Locking |
-| **Observability & Testing**| Micrometer, Prometheus, Grafana, MDC Tracing, JUnit 5, Mockito, JMeter |
-| **DevOps & Infrastructure**| Docker, Docker Compose, GitHub Actions CI/CD, AWS (EC2/S3), Render |
+| **Distributed Systems** | Apache Kafka, Redis, Lua Scripting, Dead Letter Queues (DLQ) |
+| **Databases** | PostgreSQL, MySQL, Query Optimization (`EXPLAIN ANALYZE`), Indexing |
+| **Concurrency & Control** | Multithreading, Java Concurrency, Optimistic Locking (`@Version`), Pessimistic Locking |
+| **Observability & Testing**| Micrometer, Prometheus, Grafana, MDC Tracing, JUnit 5, Mockito, JMeter, k6 |
+| **DevOps & Infrastructure**| Docker, Docker Compose, GitHub Actions CI/CD, Render |
 
 ---
 
