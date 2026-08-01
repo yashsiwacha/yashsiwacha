@@ -1,12 +1,7 @@
 <div align="center">
-  <img src="./assets/banner.png" alt="Yash Siwach - Backend & Distributed Systems Engineer" width="100%" />
+  <img src="./assets/banner.png?v=3" alt="Yash Siwach - Backend & Distributed Systems Engineer" width="100%" />
 
-  # Yash Siwach
-  
-  **Backend & Distributed Systems Engineer**
   <br>
-  Java 17/21 • Spring Boot 3 • Apache Kafka • Redis • PostgreSQL • Observability
-  <br><br>
 
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-Yash_Siwach-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/yashsiwacha)
   [![Email](https://img.shields.io/badge/Email-yashsiwach07@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:yashsiwach07@gmail.com)
