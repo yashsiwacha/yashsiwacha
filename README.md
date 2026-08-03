@@ -5,7 +5,7 @@
 
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-Yash_Siwach-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/yashsiwacha)
   [![Email](https://img.shields.io/badge/Email-yashsiwach07@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:yashsiwach07@gmail.com)
-  [![Portfolio](https://img.shields.io/badge/Portfolio-yashsiwacha.github.io-10B981?style=for-the-badge&logo=vercel&logoColor=white)](https://yashsiwacha.github.io/Portfolio/)
+  [![Portfolio](https://img.shields.io/badge/Portfolio-portfolio--rust--xi--90.vercel.app-10B981?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-rust-xi-90.vercel.app)
 </div>
 
 ---
@@ -65,15 +65,27 @@ My work centers on designing reliable systems that guarantee strict data consist
 
 ## 🛠️ Technical Stack
 
-| Category | Technologies |
-| :--- | :--- |
-| **Languages** | Java (17/21), SQL, C++, Python |
-| **Backend Frameworks** | Spring Boot 3, Spring WebFlux, Spring Data JPA / Hibernate, REST APIs |
-| **Distributed Systems** | Apache Kafka, Redis, Lua Scripting, Dead Letter Queues (DLQ) |
-| **Databases** | PostgreSQL, MySQL, Query Optimization (`EXPLAIN ANALYZE`), Indexing |
-| **Concurrency & Control** | Multithreading, Java Concurrency, Optimistic Locking (`@Version`), Pessimistic Locking |
-| **Observability & Testing**| Micrometer, Prometheus, Grafana, MDC Tracing, JUnit 5, Mockito, JMeter, k6 |
-| **DevOps & Infrastructure**| Docker, Docker Compose, GitHub Actions CI/CD, Render |
+**Languages & Core Frameworks**<br>
+![Java](https://img.shields.io/badge/Java_17%2B-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot_3-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
+![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+
+**Distributed Systems & Databases**<br>
+![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+
+**DevOps, Observability & Testing**<br>
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white)
+![JMeter](https://img.shields.io/badge/JMeter-D22128?style=for-the-badge&logo=apachejmeter&logoColor=white)
+
+<br>**Engineering Concepts:** *Optimistic/Pessimistic Locking, Dead Letter Queues (DLQ), Lua Scripting Idempotency, MDC Tracing, Lock-Free Concurrency, Query Optimization.*
 
 ---
 
