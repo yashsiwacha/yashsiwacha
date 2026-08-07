@@ -58,6 +58,8 @@ My work centers on designing reliable systems that guarantee strict data consist
 
 | Framework | Target Repository | Engineering Impact & Fix | Status |
 | :--- | :--- | :--- | :--- |
+| **Spring Framework** | `spring-projects/spring-framework` | **Jackson Converter MediaType Context**: Added `MediaType` context propagation to `AbstractJacksonHttpMessageConverter.customizeReader()` allowing subclasses to parse dynamic content based on HTTP headers ([PR #37119](https://github.com/spring-projects/spring-framework/pull/37119)). | Open Source Contribution |
+| **Spring Framework** | `spring-projects/spring-framework` | **Servlet 6.1 Compliance Fix**: Diagnosed and fixed a Servlet 6.1 compliance violation within Spring Test's `MockHttpServletRequest` (`Boolean` session wrapper) repairing broken Security workflows ([PR #37106](https://github.com/spring-projects/spring-framework/pull/37106)). | Open Source Contribution |
 | **Micrometer** | `micrometer-metrics/micrometer` | **Lock-Free Concurrency Fix**: Contributed a thread-safe update mechanism in `StepFunctionCounter` & `StepFunctionTimer` to prevent concurrent over-counting under heavy thread contention (`commit 6fa8bdc17`). Added deterministic multi-threaded unit tests. | Open Source Contribution |
 | **Resilience4j** | `resilience4j/resilience4j` | **Spring 6 Executor Aspect Thread Mode**: Fixed custom thread executor mode resolution (virtual threads vs. platform threads) across `RetryAspect` and `TimeLimiterAspect` in Spring Boot 3 / Spring 6 (`commit 4a3bd58`). Added deterministic aspect tests. | Open Source Contribution |
 
